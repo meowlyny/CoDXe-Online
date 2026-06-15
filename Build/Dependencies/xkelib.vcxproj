@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Xbox 360">
+      <Configuration>Debug</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Xbox 360">
+      <Configuration>Release</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Dependencies\xkelib\extTypes.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\console_type.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\keFileInfo.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\kePrivateStructs.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\keSmc.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\keXeCrypt.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\keXeKeys.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\keXexInfo.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\kernel\_kernelext.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\sysSock.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\xam\xamNet.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\xam\xamTask.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\xam\xamXContent.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\xam\_xamext.h" />
+    <ClInclude Include="..\..\Dependencies\xkelib\xkelib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Dependencies\xkelib\kernel\kernelext.def" />
+    <None Include="..\..\Dependencies\xkelib\xam\xamext.def" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83FEF217-22EE-4768-80BF-9F48D5B4564C}</ProjectGuid>
+    <Keyword>Xbox360Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <CustomBuildAfterTargets />
+    <CustomBuildBeforeTargets />
+    <OutDir>$(SolutionDir)Output\Bin\Release\xkelib\</OutDir>
+    <IntDir>$(SolutionDir)Output\Obj\Release\xkelib\</IntDir>
+    <OutputFile>$(SolutionDir)Output\Bin\Release\xkelib\xkelib.lib</OutputFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <CustomBuildAfterTargets />
+    <CustomBuildBeforeTargets />
+    <OutDir>$(SolutionDir)Output\Bin\Debug\xkelib\</OutDir>
+    <IntDir>$(SolutionDir)Output\Obj\Debug\xkelib\</IntDir>
+    <OutputFile>$(SolutionDir)Output\Bin\Debug\xkelib\xkelib.lib</OutputFile>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <StringPooling>true</StringPooling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;_XBOX;_LIB</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PreBuildEvent>
+      <Command>del "$(TargetDir)$(TargetName)$(TargetExt)" "$(TargetDir)$(TargetName).exp"
+lib /def:$(SolutionDir)..\Dependencies\xkelib\kernel\kernelext.def /def:$(SolutionDir)..\Dependencies\xkelib\xam\xamext.def /MACHINE:PPCBE /OUT:"$(TargetDir)$(TargetName)$(TargetExt)"
+</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>creating import libs</Message>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug\Xbox 360'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <StringPooling>true</StringPooling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;_XBOX;_LIB</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PreBuildEvent>
+      <Command>del "$(TargetDir)$(TargetName)$(TargetExt)" "$(TargetDir)$(TargetName).exp"
+lib /def:$(SolutionDir)..\Dependencies\xkelib\kernel\kernelext.def /def:$(SolutionDir)..\Dependencies\xkelib\xam\xamext.def /MACHINE:PPCBE /OUT:"$(TargetDir)$(TargetName)$(TargetExt)"
+</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>creating import libs</Message>
+    </PreBuildEvent>
+    <Lib>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

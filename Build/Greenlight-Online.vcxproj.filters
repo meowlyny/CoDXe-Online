@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\Main.cpp" />
+    <ClCompile Include="..\Source\Utility\Utility.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Utility\String.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Utility\Compression.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Utility\Mth.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Utility\Endianness.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Utility\Hooking.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Utility\FileSystem.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\adler32.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\compress.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\crc32.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\deflate.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\infback.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\inffast.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\inflate.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\inftrees.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\trees.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\uncompr.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Dependencies\zlib\zutil.c">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\BitDemon.cpp" />
+    <ClCompile Include="..\Source\XLive.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\StdAfx.h" />
+    <ClInclude Include="..\Source\Utility\Utility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\PPC.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\String.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\Compression.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\Mth.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\Endianness.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\Hooking.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Utility\FileSystem.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\crc32.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\deflate.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\inffast.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\inffixed.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\inflate.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\inftrees.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\trees.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\zconf.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\zconf.in.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\zlib.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Dependencies\zlib\zutil.h">
+      <Filter>Dependencies\zlib 1.2.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\BitDemon.h" />
+    <ClInclude Include="..\Source\XLive.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{8bbc91a7-5478-427b-91db-8a3760e5c01b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{b8c0cb91-d4a0-43b5-97b7-d4541544f45e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\zlib 1.2.3">
+      <UniqueIdentifier>{7a0dba2f-59f6-4581-b18a-a29237366e37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

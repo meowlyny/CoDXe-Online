@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.36617.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{70A4B4D0-7150-4D5A-8051-2E0156B33F46}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xkelib", "Dependencies\xkelib.vcxproj", "{83FEF217-22EE-4768-80BF-9F48D5B4564C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Greenlight-Online", "Greenlight-Online.vcxproj", "{6C2C694E-D83C-438F-8B18-3C02423A1573}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Xbox 360 = Debug|Xbox 360
+		Release|Xbox 360 = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
+		{6C2C694E-D83C-438F-8B18-3C02423A1573}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{6C2C694E-D83C-438F-8B18-3C02423A1573}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{6C2C694E-D83C-438F-8B18-3C02423A1573}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
+		{6C2C694E-D83C-438F-8B18-3C02423A1573}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{6C2C694E-D83C-438F-8B18-3C02423A1573}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{6C2C694E-D83C-438F-8B18-3C02423A1573}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83FEF217-22EE-4768-80BF-9F48D5B4564C} = {70A4B4D0-7150-4D5A-8051-2E0156B33F46}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1E9F1E5-B2CA-4662-8091-AE36A87AE8A5}
+	EndGlobalSection
+EndGlobal
