@@ -1,5 +1,34 @@
 #include "XLive.h"
 
+struct XUserEntry
+{
+	XUID xuid;
+	char szGamertag[16];
+	DWORD dwFlags;
+};
+
+struct XUserList
+{
+	DWORD dwUserCount;
+	XUserEntry users[18];
+};
+
+CDetour XPartyGetUserList_Hook;
+int XPartyGetUserList_Stub(int a1)
+{
+	struct XUserList* pList = (struct XUserList*)a1;
+
+	if (!pList)
+		return E_POINTER;
+
+	pList->dwUserCount = 1;
+	pList->users[0].xuid = 0xE000000000000001ULL;
+	pList->users[0].dwFlags = 0;
+	strncpy(pList->users[0].szGamertag, "car keys", sizeof(pList->users[0].szGamertag));
+
+	return S_OK;
+}
+
 CDetour Live_IsUserSignedInToDemonware_Hook;
 static BOOL Live_IsUserSignedInToDemonware(int controllerIndex)
 {
@@ -94,6 +123,8 @@ static int LiveStorage_CompletedPlaylistPopulation()
 
 void CXLive::RegisterHooks()
 {
+	XPartyGetUserList_Hook.CreateDetour(0x82910588, XPartyGetUserList_Stub);
+
 	Live_IsUserSignedInToDemonware_Hook.CreateDetour(0x827097F0, Live_IsUserSignedInToDemonware);
 	Live_IsUserSignedInToLive_Hook.CreateDetour(0x82710A60, Live_IsUserSignedInToLive);
 	Live_Base_IsConnected_Hook.CreateDetour(0x82769478, Live_Base_IsConnected);

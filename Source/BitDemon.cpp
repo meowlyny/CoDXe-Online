@@ -1,6 +1,24 @@
 #include "BitDemon.h"
 #include <xgraphics.h>
 
+CDetour bdLobbyConnection_getStatus_Detour;
+int bdLobbyConnection_getStatus(int a1)
+{
+	return 2;
+}
+
+CDetour bdLobbyService_getStatus_Detour;
+int bdLobbyService_getStatus(int a1)
+{
+	return 2;
+}
+
+CDetour bdLobbyService_getContentStreaming_Detour;
+int bdLobbyService_getContentStreaming()
+{
+	return 1;
+}
+
 bool fetchCompleted = (bool)0x84C576A8;
 
 uint8_t g_playlistPopulationBuffer[0x10000];
@@ -155,6 +173,10 @@ TaskRecord* LiveStorage_WriteDWUserFile(int controllerIndex, dwFileOperationInfo
 
 void CBitDemon::RegisterHooks()
 {
+	bdLobbyConnection_getStatus_Detour.CreateDetour(0x82AB4558, bdLobbyConnection_getStatus);
+	bdLobbyService_getStatus_Detour.CreateDetour(0x82A892B8, bdLobbyService_getStatus);
+	//bdLobbyService_getContentStreaming_Detour.CreateDetour(0x82A89F10, bdLobbyService_getContentStreaming);
+
 	// Load the globe's heat map
 	LiveStorage_FetchPlaylistPopulation_Detour.CreateDetour(0x8275FAA0, LiveStorage_FetchPlaylistPopulation);
 	LiveStorage_GetPlaylistPopulationBuffer_Detour.CreateDetour(0x8275FC80, LiveStorage_GetPlaylistPopulationBuffer);
